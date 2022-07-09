@@ -19,15 +19,24 @@ function TodoItem(props) {
     props.setTodos(newTodos);
   };
  */
+
+  const imprimir = () => {
+    console.log('Quiero ver mi tarea');
+  }
   return (
-    <li className="TodoItem">
+    <li 
+      className="TodoItem"
+    >
       <span
         className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
         onClick={props.onComplete}
       >
         √
       </span>
-      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
+      <p 
+        className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
+        onClick={imprimir}
+      >
         {props.text}
       </p>
       <span className="Icon Icon-delete" onClick={props.onDelete}>

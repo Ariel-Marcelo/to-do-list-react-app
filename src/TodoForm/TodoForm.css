@@ -17,7 +17,20 @@ label {
   margin-bottom: 26px;
 }
 
-textarea {
+.textarea-title {
+  background-color: #F9FBFC;
+  border: 2px solid #202329;
+  border-radius: 2px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  color: #1E1E1F;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px;
+  height: 26px;
+  width: calc(100% - 25px);
+}
+
+.textarea-description {
   background-color: #F9FBFC;
   border: 2px solid #202329;
   border-radius: 2px;
@@ -28,6 +41,7 @@ textarea {
   padding: 12px;
   height: 96px;
   width: calc(100% - 25px);
+  margin-top: 20px;
 }
 
 textarea::placeholder {
@@ -68,4 +82,24 @@ textarea:focus {
 
 .TodoForm-button--cancel {
   background: transparent;
+}
+
+.warning {
+  background-color: rgb(255, 147, 147);
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 1px red;
+
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

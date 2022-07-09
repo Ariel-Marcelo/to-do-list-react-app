@@ -6,20 +6,19 @@ function TodoSearch() {
 
   //const [searchValue, setSearchValue] = React.useState("");
   const { searchValue, setSearchValue} = React.useContext(TodoContext);
+
    const onSearchValueChange = (event) => {
-     console.log(event.target.value);
      setSearchValue(event.target.value);
    };
   
-  return [
+  return (
     <input
       className="TodoSearch"
       placeholder="Cebolla"
       value = {searchValue}
       onChange={onSearchValueChange}
-    />,
-    <p>{searchValue}</p>
-  ];
+    />
+  );
 }
 
 export { TodoSearch };
