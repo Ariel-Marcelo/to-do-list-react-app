@@ -1,0 +1,20 @@
+.container {
+  width: 80%;
+  max-width: 90%;
+  background-color: #61DAFA;
+  padding: 30px 30px;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  border-radius: 5px;
+}
+
+.scroll-container {
+  font-family: cursive;
+  background-color: #F9FBFC;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  border-radius: 5px;
+  scroll-behavior: auto;
+  overflow: auto;
+  padding: 20px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./TodoItem.css";
-
+import { TodoContext} from '../TodoContext';
 function TodoItem(props) {
   /* // alternative solution without stateless and stateful
   const onComplete = () => {
@@ -19,9 +19,15 @@ function TodoItem(props) {
     props.setTodos(newTodos);
   };
  */
+  const { openModal, setOpenModal, setTodoSearch} = React.useContext(TodoContext);
 
-  const imprimir = () => {
-    console.log('Quiero ver mi tarea');
+  const imprimir = (event) => {
+    if (openModal) {
+      console.log('Esta abierto');
+    } else {
+      setOpenModal('View');
+    }
+    setTodoSearch(event.target.textContent);
   }
   return (
     <li 
@@ -34,6 +40,7 @@ function TodoItem(props) {
         √
       </span>
       <p 
+        value = {'tortillas'}
         className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
         onClick={imprimir}
       >

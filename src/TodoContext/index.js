@@ -16,6 +16,8 @@ function TodoProvider(props) {
 
   const [searchValue, setSearchValue] = useState("");
   const [openModal, setOpenModal] = useState(false);
+  const [todoSearch, setTodoSearch] = useState('');
+  
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -30,6 +32,22 @@ function TodoProvider(props) {
       const searchText = searchValue.toLowerCase();
       return todoText.includes(searchText);
     });
+  }
+
+  let todoSearched = '';
+
+  if (!todoSearch.length >= 1) {
+    todoSearched = todos;
+  } else {
+    const index = todos.findIndex((todo) => { 
+      return todoSearch === todo.text
+    });
+    if (index === -1) {
+      todoSearched =  { completed: 'None', text: 'Not found', description: 'El dato buscado no se encuentra en el local storage' }
+    } else {
+      todoSearched = todos[index];
+    }
+    
   }
 
   // Función para añadir un nuevo TODO
@@ -73,7 +91,10 @@ function TodoProvider(props) {
         deleteTodo,
         openModal,
         setOpenModal,
-        addTodo
+        addTodo,
+        todoSearched,
+        todoSearch,
+        setTodoSearch,
       }}
     >
       {props.children}

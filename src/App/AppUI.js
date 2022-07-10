@@ -7,6 +7,7 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { TodoContext } from "../TodoContext";
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm"; 
+import { TodoView } from "../TodoView"
 
 // Desescructuramos las nuesvas props
 function AppUI() {
@@ -33,9 +34,14 @@ function AppUI() {
           />
         ))}
       </TodoList>
-      {!!openModal && (
+      {openModal === 'Create' && (
         <Modal>
           <TodoForm />
+        </Modal>
+      )}
+      {openModal === 'View' && (
+        <Modal>
+          <TodoView />
         </Modal>
       )}
 
