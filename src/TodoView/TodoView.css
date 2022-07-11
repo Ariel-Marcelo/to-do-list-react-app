@@ -2,11 +2,12 @@
   width: 80%;
   max-width: 90%;
   background-color: #61DAFA;
-  padding: 30px 30px;
+  padding: 30px 30px 0px 30px;
   align-items: center;
   flex-direction: column;
   color: black;
   border-radius: 5px;
+  justify-content: center;
 }
 
 .scroll-container {
@@ -17,4 +18,50 @@
   scroll-behavior: auto;
   overflow: auto;
   padding: 20px;
+}
+
+.my-input {
+  font-family: cursive;
+  font-size:small;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  display: block;
+  width: 98%;
+}
+
+.margen-none {
+  margin: 0;
+}
+
+.save-button-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.save-button {
+  font-family: cursive;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  padding: 15px;
+  text-align: center;
+}
+
+.save-button:hover {
+  background-color: rgb(48, 48, 199);
+  color: white;
+}
+.cancel-button {
+  font-family: cursive;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  padding: 15px;
+  text-align: center;
+}
+
+.cancel-button:hover {
+  background-color: rgb(199, 50, 50);
+  color: white;
 }

@@ -50,6 +50,7 @@ function TodoProvider(props) {
     
   }
 
+
   // Función para añadir un nuevo TODO
   const addTodo = (text, description) => {
     const newTodos = [...todos];
@@ -76,6 +77,13 @@ function TodoProvider(props) {
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
+
+  const updateTodo = (oldTodo, newTodo) => {
+    const index = todos.findIndex((todo) => todo === oldTodo);
+    todos[index] = newTodo;
+    saveTodos([...todos]);
+  }
+
   // Aqui es donde a mi contexto le proveeo de todos los datos globales
   return (
     <TodoContext.Provider
@@ -95,6 +103,7 @@ function TodoProvider(props) {
         todoSearched,
         todoSearch,
         setTodoSearch,
+        updateTodo
       }}
     >
       {props.children}
