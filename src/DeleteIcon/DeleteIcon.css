@@ -1,0 +1,12 @@
+.IconTrash {
+    fill: rgb(96, 69, 252);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+  
+}

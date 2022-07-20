@@ -1,0 +1,41 @@
+.loadingTodo-container {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: preloadAnimation;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  display: flex;
+  margin-top: 24px;
+}
+
+.loadingTodo-text {
+  margin: 24px 0 24px 24px;
+  width: calc(100% - 120px);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.loadingTodo-completeIcon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  /* background-color: #CCC; */
+}
+
+@keyframes preloadAnimation{
+  0%{
+      background-position: -769px;
+  }
+  100%{
+      background-position: 769px;
+  }
+}

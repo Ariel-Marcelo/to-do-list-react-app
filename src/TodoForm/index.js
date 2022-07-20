@@ -2,7 +2,7 @@ import React from "react";
 import { TodoContext } from "../TodoContext";
 import "./TodoForm.css";
 
-function TodoForm() {
+function TodoForm({children}) {
   // Creamos un estado para nuestro nuevo TODO
   const [newTodoValue, setNewTodoValue] = React.useState("");
   const [newDescriptionValue, setNewDescriptionValue] = React.useState('');
@@ -54,8 +54,9 @@ function TodoForm() {
   return (
     <form onSubmit={onSubmit} key="form">
       <div className="warning hide" key="warning">
-        Añade un Título a tu To Do
+        { children }  Añade un Título a tu To Do
       </div>
+      
       <label>Escribe tu nuevo TODO</label>
       <textarea
         value={newTodoValue}

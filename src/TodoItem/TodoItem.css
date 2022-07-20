@@ -20,7 +20,7 @@
   text-decoration: line-through;
 }
 
-.Icon {
+/* .Icon {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -29,7 +29,8 @@
   width: 48px;
   font-size: 24px;
   font-weight: bold;
-  /* background-color: #CCC; */
+  color: blueviolet;
+
 }
 
 .Icon-check {
@@ -42,9 +43,8 @@
 
 .Icon-delete {
   position: absolute;
-  top: -24px;
   right: 0;
 }
 .Icon-delete:hover {
   color: red;
-}
+} */
