@@ -1,0 +1,91 @@
+.container {
+  width: 80%;
+  max-width: 90%;
+  background-color: #393E41;
+  padding: 30px 30px 0px 30px;
+  align-items: center;
+  flex-direction: column;
+  color: #393E41;
+  justify-content: center;
+  max-width: 575px;
+  font-family: "Indie Flower",cursive;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.scroll-container {
+  background-color: #F1F1F1;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  border: 2px solid #202329;
+  padding: 20px;
+}
+
+
+
+
+.my-input {
+  background-color: white;
+  border: none;
+  display: block;
+  width: 98%;
+  padding: 5px;
+  margin-top: 10px;
+  font-family: "Indie Flower",cursive;
+  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+}
+
+.bg-secondary {
+  background-color: #F1F1F1;
+}
+
+.description {
+  height: 100px;
+}
+
+.margen-none {
+  margin: 0;
+}
+
+.save-button-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.save-button {
+  font-family: cursive;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  padding: 15px;
+  text-align: center;
+  background-color: #61DAFA;
+}
+
+.save-button:hover {
+  
+  color: white;
+}
+.cancel-button {
+  font-family: cursive;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  padding: 15px;
+  text-align: center;
+  background-color: #FF6978;
+}
+
+.cancel-button:hover {
+  
+  color: white;
+}
+
+.label-sections {
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-top: 10px;
+  color:  #393E41;
+}

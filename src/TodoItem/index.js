@@ -21,7 +21,7 @@ function TodoItem(props) {
  */
   const { openModal, setOpenModal, setTodoSearch} = React.useContext(TodoContext);
 
-  const imprimir = (event) => {
+  const modal = (event) => {
     if (openModal) {
       console.log('Esta abierto');
     } else {
@@ -37,7 +37,7 @@ function TodoItem(props) {
       <p 
         value = {'tortillas'}
         className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}
-        onClick={imprimir}
+        onClick={modal}
       >
         {props.text}
       </p>

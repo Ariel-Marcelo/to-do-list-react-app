@@ -2,5 +2,9 @@
   font-size: 24px;
   text-align: center;
   margin: 0;
-  padding: 48px;
+  padding: 10px;
+}
+
+.container-counter {
+  margin: 10px 0px;
 }
