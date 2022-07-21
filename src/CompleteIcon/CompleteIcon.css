@@ -1,11 +1,11 @@
 .IconCheck {
-  fill: rgb(0 255 127);
+  fill: #6BD425;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
-  width: 48px;
+  height: 38px;
+  width: 38px;
   font-size: 24px;
   font-weight: bold;
 }

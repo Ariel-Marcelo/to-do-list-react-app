@@ -1,18 +1,18 @@
 .container {
   width: 80%;
   max-width: 90%;
-  background-color: #61DAFA;
+  background-color: #393E41;
   padding: 30px 30px 0px 30px;
   align-items: center;
   flex-direction: column;
-  color: black;
+  color: #393E41;
   border-radius: 5px;
   justify-content: center;
 }
 
 .scroll-container {
   font-family: cursive;
-  background-color: #F9FBFC;
+  background-color: #F1F1F1;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
   border-radius: 5px;
   scroll-behavior: auto;
@@ -28,6 +28,8 @@
   border: none;
   display: block;
   width: 98%;
+  padding: 5px;
+  margin-top: 10px;
 }
 
 .margen-none {
@@ -49,7 +51,7 @@
 }
 
 .save-button:hover {
-  background-color: rgb(48, 48, 199);
+  background-color: #61DAFA;
   color: white;
 }
 .cancel-button {
@@ -62,6 +64,6 @@
 }
 
 .cancel-button:hover {
-  background-color: rgb(199, 50, 50);
+  background-color: #FF6978;
   color: white;
 }
