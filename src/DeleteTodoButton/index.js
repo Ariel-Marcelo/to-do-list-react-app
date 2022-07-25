@@ -1,11 +1,8 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
 import './DeleteTodoButton.css';
 
-function DeleteTodoButton() {
+function DeleteTodoButton({ openModal, setOpenModal }) {
 
-  const { openModal, setOpenModal } = React.useContext(TodoContext);
-  
   const delte = () => {
     console.log('delete');
   }
