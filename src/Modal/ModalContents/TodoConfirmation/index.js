@@ -1,9 +1,7 @@
 import React from "react";
 import "./TodoConfirmation.css";
-import { TodoContext } from "../../../TodoContext";
 
-function TodoConfirmation() {
-  const { todoSearched, deleteTodo, setOpenModal} = React.useContext(TodoContext);
+function TodoConfirmation({ todoSearched, deleteTodo, setOpenModal} ) {
   const todoTitle = todoSearched.text;
 
   const eliminar = (name) => {

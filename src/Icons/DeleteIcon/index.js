@@ -2,10 +2,8 @@ import React from "react";
 import './DeleteIcon.css'
 import { BsFillTrashFill } from 'react-icons/bs';
 import { IconContext } from "react-icons";
-import { TodoContext} from '../../TodoContext';
-function DeleteIcon(props) {
 
-  const { openModal, setOpenModal, setTodoSearch} = React.useContext(TodoContext);
+function DeleteIcon({ setTodoSearch, openModal, setOpenModal }) {
 
   const modalConfirmation = (event) => {
     if (openModal) {
@@ -24,7 +22,6 @@ function DeleteIcon(props) {
     <IconContext.Provider value={{color:"blue", className: "IconTrash global-class-name"}}>
       <BsFillTrashFill className="Icon Icon-delete"  onClick={modalConfirmation} />
     </IconContext.Provider>
-    
   );
 }
 

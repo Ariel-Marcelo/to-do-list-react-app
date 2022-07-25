@@ -1,10 +1,7 @@
 import React from "react";
 import "./TodoSearch.css";
-import { TodoContext } from "../TodoContext";
-import { SearchIcon } from "../Icons/SearchIcon";
-function TodoSearch() {
-  //const [searchValue, setSearchValue] = React.useState("");
-  const { searchValue, setSearchValue } = React.useContext(TodoContext);
+
+function TodoSearch({searchValue, setSearchValue, children}) {
 
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
@@ -12,7 +9,7 @@ function TodoSearch() {
 
   return (
     <div className="TodoSearch-container">
-      <SearchIcon />
+      {children}
       <input
         className="TodoSearch"
         placeholder={`Todo Title`}

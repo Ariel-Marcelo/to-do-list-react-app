@@ -1,10 +1,9 @@
 import React from "react";
-import { TodoContext } from "../../../TodoContext";
 import "./TodoView.css";
 import { useState } from "react";
 
-function TodoView() {
-  const { todoSearched, updateTodo, setOpenModal } = React.useContext(TodoContext);
+function TodoView({ todoSearched, updateTodo, setOpenModal }) {
+
   const [title, setTitle] = useState(todoSearched.text);
   const [description, setDescription] = useState(todoSearched.description);
 
