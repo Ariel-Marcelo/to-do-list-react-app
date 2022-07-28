@@ -9,6 +9,7 @@ function useTodos() {
     saveItem: saveTodos,
     loading,
     error,
+    sincronizeItem: sincronizeTodos,
   } = useLocalStorage("TODOS_V1", []);
 
   const [searchValue, setSearchValue] = useState("");
@@ -99,7 +100,8 @@ function useTodos() {
         todoSearched,
         todoSearch,
         setTodoSearch,
-        updateTodo    
+        updateTodo,
+        sincronizeTodos,    
   });
 }
 // Exportamos nuestro proveedor y nuestro contexto, en el context también esta el consumer, para acceder a nuestro contexto

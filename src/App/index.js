@@ -17,6 +17,7 @@ import { WarningIcon } from "../Icons/WarningIcon";
 import { TodoConfirmation } from "../Modal/ModalContents/TodoConfirmation";
 import { DeleteTodoButton } from "../DeleteTodoButton";
 import { SearchIcon } from "../Icons/SearchIcon";
+import { ChangeAlertWithStorageListener } from "../ChangeAlert";
 // Desescructuramos las nuesvas props
 function App() {
   const {
@@ -35,26 +36,30 @@ function App() {
     deleteTodo,
     updateTodo,
     addTodo,
+    sincronizeTodos,
   } =  useTodos();
 
   return (
     <React.Fragment>
-      <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
+      <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} loading={loading}/>
 
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}>
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading}>
         <SearchIcon />
       </TodoSearch>
 
-      <TodoList>
-        {/* // Mostramos un mensaje en caso de que ocurra algún error */}
-        {error && <TodosError error={error} />}
-        {/* // Mostramos un mensaje de cargando, cuando la aplicación está cargando lo sdatos */}
-        {loading &&
-          new Array(5).fill(1).map((a, i) => <TodosLoading key={i} />)}
-        {/* // Si terminó de cargar y no existen TODOs, se muestra un mensaje para crear el primer TODO */}
-        {!loading && !searchedTodos.length && <EmptyTodos />}
-
-        {searchedTodos.map((todo) => (
+      <TodoList
+        error={error}
+        loading={loading}
+        totalTodos={totalTodos}
+        searchedTodos={searchedTodos}
+        searchText={searchValue}
+        onError={() => <TodosError />}
+        onLoading={() =>  { return new Array(5).fill(1).map((a, i) => <TodosLoading key={i} />)}}
+        onEmptyTodos={() => <EmptyTodos />}
+        onEmptySearchResults={(searchText) => (
+          <p>No hay resultado para {searchText} </p>
+        )}
+        render={todo => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -70,8 +75,10 @@ function App() {
               setTodoSearch={setTodoSearch}
             />
           </TodoItem>
-        ))}
-      </TodoList>
+        )}
+      />
+
+        
 
       {openModal === "Create" && (
         <Modal>
@@ -103,6 +110,7 @@ function App() {
 
       <CreateTodoButton setOpenModal={setOpenModal} />
       <DeleteTodoButton setOpenModal={setOpenModal} />
+      <ChangeAlertWithStorageListener sincronize= {sincronizeTodos}/>  
     </React.Fragment>
   );
 }

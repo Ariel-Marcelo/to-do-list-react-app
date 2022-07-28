@@ -7,6 +7,8 @@ function useLocalStorage(itemName, initialValue) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState(initialValue);
+
+  const [ sincronizedItem, setSincronizedItem ] = useState(true);
   
   useEffect(() => {
   // Simulamos un segundo de delay de carga 
@@ -24,6 +26,8 @@ function useLocalStorage(itemName, initialValue) {
         }
         // guardamos en el estado item lo que guarde en el localStorage 
         setItem(parsedItem);
+
+        setSincronizedItem(true);
       } catch(error) {
       // En caso de un error lo capturamos y lo guardamos en el estado error
         setError(error);
@@ -32,7 +36,7 @@ function useLocalStorage(itemName, initialValue) {
         setLoading(false);
       }
     }, 1000);
-  }, []); // como use Effect tiene un [] solo se ejecutará la primera vez que renderizo el navegador
+  }, [sincronizedItem]);
   
   const saveItem = (newItem) => {
     // Manejamos la tarea dentro de un try/catch por si ocurre algún error
@@ -46,12 +50,19 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
+
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  }
+
   // Para tener un mejor control de los datos retornados, podemos regresarlos dentro de un objeto
   return {
     item,
     saveItem,
     loading,
     error,
+    sincronizeItem
   };
 }
 

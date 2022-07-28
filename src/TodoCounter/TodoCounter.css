@@ -8,3 +8,7 @@
 .container-counter {
   margin: 10px 0px;
 }
+
+.TodoCounter--loading {
+  opacity: 25%;
+}
