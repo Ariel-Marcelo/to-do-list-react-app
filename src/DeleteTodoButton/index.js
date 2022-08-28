@@ -3,14 +3,19 @@ import './DeleteTodoButton.css';
 
 function DeleteTodoButton({ openModal, setOpenModal }) {
 
-  const delte = () => {
-    console.log('delete');
-  }
+  const onClickButton = () => {
+    if (openModal) {
+      setOpenModal(false);
+    } else {
+      setOpenModal('DeleteAll');
+    }
+    
+  };
   
   return (
     <button
       className="DeleteTodoButton"
-      onClick={delte}
+      onClick={onClickButton}
     >
       X
     </button>

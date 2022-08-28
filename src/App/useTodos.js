@@ -76,6 +76,10 @@ function useTodos() {
     saveTodos(newTodos);
   };
 
+  const deleteAllTodo = () => {
+    saveTodos([]);
+  }
+
   const updateTodo = (oldTodo, newTodo) => {
     const index = todos.findIndex((todo) => todo === oldTodo);
     todos[index] = newTodo;
@@ -101,7 +105,8 @@ function useTodos() {
         todoSearch,
         setTodoSearch,
         updateTodo,
-        sincronizeTodos,    
+        sincronizeTodos,
+        deleteAllTodo    
   });
 }
 // Exportamos nuestro proveedor y nuestro contexto, en el context también esta el consumer, para acceder a nuestro contexto

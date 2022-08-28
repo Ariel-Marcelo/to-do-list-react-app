@@ -15,6 +15,7 @@ import { DeleteIcon } from "../Icons/DeleteIcon";
 import { CompleteIcon } from "../Icons/CompleteIcon";
 import { WarningIcon } from "../Icons/WarningIcon";
 import { TodoConfirmation } from "../Modal/ModalContents/TodoConfirmation";
+import {TodoDeleteConfirmation} from "../Modal/ModalContents/TodoDelteConfirmation";
 import { DeleteTodoButton } from "../DeleteTodoButton";
 import { SearchIcon } from "../Icons/SearchIcon";
 import { ChangeAlertWithStorageListener } from "../ChangeAlert";
@@ -37,13 +38,22 @@ function App() {
     updateTodo,
     addTodo,
     sincronizeTodos,
-  } =  useTodos();
+    deleteAllTodo
+  } = useTodos();
 
   return (
     <React.Fragment>
-      <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} loading={loading}/>
+      <TodoCounter
+        totalTodos={totalTodos}
+        completedTodos={completedTodos}
+        loading={loading}
+      />
 
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} loading={loading}>
+      <TodoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        loading={loading}
+      >
         <SearchIcon />
       </TodoSearch>
 
@@ -54,12 +64,14 @@ function App() {
         searchedTodos={searchedTodos}
         searchText={searchValue}
         onError={() => <TodosError />}
-        onLoading={() =>  { return new Array(5).fill(1).map((a, i) => <TodosLoading key={i} />)}}
+        onLoading={() => {
+          return new Array(5).fill(1).map((a, i) => <TodosLoading key={i} />);
+        }}
         onEmptyTodos={() => <EmptyTodos />}
         onEmptySearchResults={(searchText) => (
           <p>No hay resultado para {searchText} </p>
         )}
-        render={todo => (
+        render={(todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -77,8 +89,6 @@ function App() {
           </TodoItem>
         )}
       />
-
-        
 
       {openModal === "Create" && (
         <Modal>
@@ -98,6 +108,15 @@ function App() {
         </Modal>
       )}
 
+      {openModal === "DeleteAll" && (
+        <Modal>
+          <TodoDeleteConfirmation
+            deleteAllTodo={deleteAllTodo}
+            setOpenModal={setOpenModal}
+          />
+        </Modal>
+      )}
+
       {openModal === "Confirmation" && (
         <Modal>
           <TodoConfirmation
@@ -110,7 +129,7 @@ function App() {
 
       <CreateTodoButton setOpenModal={setOpenModal} />
       <DeleteTodoButton setOpenModal={setOpenModal} />
-      <ChangeAlertWithStorageListener sincronize= {sincronizeTodos}/>  
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </React.Fragment>
   );
 }

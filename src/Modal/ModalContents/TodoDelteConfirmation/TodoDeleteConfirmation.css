@@ -1,0 +1,49 @@
+.TodoDeleteConfirmation {
+  width: 90%;
+  max-width: 350px;
+  background-color: #393E41;
+  padding: 33px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.TodoDeleteConfirmation p {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.TodoDeleteConfirmation__btn-container {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.TodoDeleteConfirmation__btn-container button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  color: #202329;
+  font-weight: 400;
+  width: 120px;
+  height: 48px;
+  border-radius: 2px;
+  border: none;
+  font-family: 'Montserrat';
+}
+
+.TodoDeleteConfirmation__btn--accepted {
+  background: #61DAFA;
+  box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}
+
+.TodoDeleteConfirmation__btn--denaied {
+
+  background:  #FF6978;
+  box-shadow: 0px 5px 25px rgb(237, 115, 115, 0.5);
+}

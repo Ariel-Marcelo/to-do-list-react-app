@@ -82,6 +82,7 @@ textarea:focus {
 
 .TodoForm-button--cancel {
   background:  #FF6978;
+  box-shadow: 0px 5px 25px rgb(237, 115, 115, 0.5);
 }
 
 .warning {
